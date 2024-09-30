@@ -1,5 +1,5 @@
 # Repository - PFDA-assignments
-This is GitHub repository for the assignments associated with the Programming for Data Analytics module.  
+This is the GitHub repository for the assignments associated with the Programming for Data Analytics module.  
  
 | Author  | Student ID  | Term  | Created  |  
 |----------|---------|---------|---------|  
