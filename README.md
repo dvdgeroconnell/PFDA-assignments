@@ -7,5 +7,9 @@ This is the GitHub repository for the assignments associated with the Programmin
 
 # Contents  
 
-## First Assignment - placeholder  
-Description of first assignment.  
+## Assignment 1  
+Upload the URL to the PFDA assignment repository.  
+https://github.com/dvdgeroconnell/PFDA-assignments.git
+
+## Assignment 2
+Create a jupyter notebook called assignment2-weather.ipynb with a plot of the "dryBulbTemperature_Celsius" field over time.  
