@@ -11,5 +11,8 @@ This is the GitHub repository for the assignments associated with the Programmin
 Upload the URL to the PFDA assignment repository.  
 https://github.com/dvdgeroconnell/PFDA-assignments.git
 
-## Assignment 2
+## Assignment 2  
 Create a jupyter notebook called assignment2-weather.ipynb with a plot of the "dryBulbTemperature_Celsius" field over time.  
+
+## Assignment 3  
+Create a notebook called assignment03-pie.ipynb with a pie chart of people's email domains in the csv file at the url https://drive.google.com/uc?id=1AWPf-pJodJKeHsARQK_RHiNsE8fjPCVK&export=download. This csv file has 1000 people. The data was downloaded to the file people-1000.csv.  
