@@ -21,10 +21,10 @@ Create a notebook called assignment03-pie.ipynb with a pie chart of people's ema
 There was no assignment 4.  
 
 ## Assignment 5  
-Create a program called assignment5_risk.py. Calculate the outcome of either:
+Create a Python program (or notebook) called assignment_5_risk (.py or .ipynb). Calculate the outcome of either:
 - A user-provided number of individual battle rounds in the game Risk; and plot the total attackers and total defenders lost in a pie chart.  
 - Calculate a random number of attackers and defenders, and run until one or the other is depleted to zero. The attack and defence losses after each round are plotted in a line graph.  
   
-The program is run by executing the command "python assignment5_risk.py" from the command line.  
+The program is run by executing the command "python assignment_5_risk.py" from the command line.  
   
 #### End
