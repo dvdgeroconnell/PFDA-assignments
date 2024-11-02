@@ -17,5 +17,11 @@ Create a jupyter notebook called assignment2-weather.ipynb with a plot of the "d
 ## Assignment 3  
 Create a notebook called assignment03-pie.ipynb with a pie chart of people's email domains in the csv file at the url https://drive.google.com/uc?id=1AWPf-pJodJKeHsARQK_RHiNsE8fjPCVK&export=download. This csv file has 1000 people. The data was downloaded to the file people-1000.csv.  
 
+## Assignment 4  
+There was no assignment 4.  
+
 ## Assignment 5  
-Create a program called assignment5_risk.py. Calculate the outcome of a user-provided number of individual battle rounds in the game Risk; and plot the total attackers and total defenders lost in a pie chart.
+Create a program called assignment5_risk.py. Calculate the outcome of a user-provided number of individual battle rounds in the game Risk; and plot the total attackers and total defenders lost in a pie chart.  
+The program is run by executing the command "python assignment5_risk.py" from the command line.  
+  
+#### End
