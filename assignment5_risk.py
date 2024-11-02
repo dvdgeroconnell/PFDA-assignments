@@ -1,26 +1,33 @@
 # assignment_5_risk.py
 
-# A program to calculate the outcome of a user-provided number of individual battle rounds 
-# in the game Risk; and to plot the total attackers and total defenders lost in a pie chart.
+# Purpose of Program:
+# A program to calculate the outcome of a game of Risk for one of the following options.
+# a) Read in a user-provided number of battle rounds and plot in a pie chart the total attackers
+#    and defenders lost; or
+# b) Generate a random number of attackers and defenders, and play until one or other is depleted.
+#    Plot the round-by-round losses in a line chart.
 
-# Summary of Rules
-# In each battle round the attacker can put forward up to 3 troops (3 dice), and the defender
-# can put forward up to 2 troops (2 dice).
-# The 2 highest of the 3 attacking dice are used.
-# The top 2 dice are compared and the attacker wins if their throw is greater than the defender's,
-# who loses a troop). Otherwise attack loses a troop.
-# The next 2 highest are then compared and the attacker wins if their throw is greater than the
-# defender's, who loses a troop). Otherwise attack loses a troop.
+# Summary of Rules:
+# - In each battle round the attacker can put forward up to 3 troops (3 dice), and the defender
+#   can put forward up to 2 troops (2 dice).
+# - The 2 highest of the 3 attacking dice are used.
+# - The top 2 dice are compared and the attacker wins if their throw is greater than the defender's,
+#   who loses a troop. Otherwise the attacker loses a troop.
+# - The next 2 highest are then compared and the attacker wins if their throw is greater than the
+#   defender's, who loses a troop. Otherwise the attacker loses a troop.
 
-# Assumptions: 3 attackers and 2 defenders available and committed in each round
+# Assumptions:
+# - 3 attackers and 2 defenders available and committed in each round.
 
 # Author: David O'Connell
 
 # References:
 #  PFDA Topic 5 lecture videos (Andrew Beatty) - https://vlegalwaymayo.atu.ie/course/view.php?id=10462
 #  https://www.w3schools.com/python/numpy/default.asp for NumPy
-#  https://www.w3schools.com/python/numpy/numpy_random.asp for randon integer generation
+#  https://www.w3schools.com/python/numpy/numpy_random.asp for random integer generation
 #  https://www.w3schools.com/python/matplotlib_pie_charts.asp for pie charts
+#  https://www.geeksforgeeks.org/python-ways-to-add-row-columns-in-numpy-array/ to add rows to a 2D array
+#  https://stackoverflow.com/questions/4001067/sum-one-row-of-a-numpy-array to sum a row in a 2D array
 
 # Import the required packages
 import numpy as np
@@ -41,10 +48,10 @@ def do_menu():
         choice = 0
     return choice
 
-def do_menu1():
+def do_sub_menu():
     # Ask for a value and check that it is an integer - handle range checking in the main program
     try:
-        choice = int(input("\nEnter the number of rounds, up to 1 million (0 to quit): "))
+        choice = int(input("\nEnter the number of rounds, between 1 and 100K (0 to quit): "))
     # Handle non-integer entries gracefully
     except ValueError:
         print("Invalid entry, not an integer")
@@ -52,9 +59,9 @@ def do_menu1():
     return choice
 
 def play_specified_rounds():
-    total = do_menu1()
+    total = do_sub_menu()
 
-    if total > 1000000:
+    if total > 100000:
         print("Be reasonable")
 
     elif total > 0:
@@ -152,9 +159,15 @@ def play_until_winner():
     maxx = maxx*1.1
     plt.ylim([0, maxx])
 
+    if attack_army > defence_army:
+        title_str = "Result: Defence loses"
+    else:
+        title_str = "Result: Attack loses"
+
     risk_title = "Risk Results for " + str(count) + " rounds"
     risk_labels = ["Attack","Defence"]
-    plt.title(risk_title, loc='left', fontsize=14)
+    plt.suptitle(risk_title, fontsize=14)
+    plt.title(title_str, loc='left')
     plt.legend(bbox_to_anchor=(1.02, 1.15), loc='upper right', labels=risk_labels)
     plt.show()
     return
@@ -171,10 +184,11 @@ match choice:
         run = False
 
     case 1:
-        # Write the overall summary for the dataset, and the summary for each species to a text file
+        # call the function which implements option 1 (play for a specified number of rounds)
         play_specified_rounds()
 
     case 2:
+        # call the function which implements option 2 (play until one side is out of resources)
         play_until_winner()
 
     case _:
