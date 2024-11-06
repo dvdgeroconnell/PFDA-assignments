@@ -26,5 +26,8 @@ Create a Python program (or notebook) called assignment_5_risk (.py or .ipynb). 
 - Calculate a random number of attackers and defenders, and run until one or the other is depleted to zero. The attack and defence losses after each round are plotted in a line graph.  
   
 The program is run by executing the command "python assignment_5_risk.py" from the command line.  
+
+## Assignment 6
+First version of assignment 6...
   
 #### End
