@@ -1,4 +1,5 @@
 # assignment_6_Weather.py
+# 17/11 attempt
 
 # Purpose of Program:
 #   A program to...
@@ -13,8 +14,6 @@
 #   https://www.w3schools.com/python/numpy/default.asp for NumPy
 #   https://www.geeksforgeeks.org/rotate-axis-tick-labels-in-seaborn-and-matplotlib/ for rotating labels
 #
-#
-#
 # Import the required packages
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,77 +26,42 @@ import seaborn as sns
 # of data as there are nearly 4 months of data missing after it
 df = pd.read_csv("https://cli.fusio.net/cli/climate_data/webdata/hly4935.csv", skiprows=23,low_memory=False)
 df = df.drop(0)
-print(df.head(3))
-
-# or you could use this to drop the first row
-# dateFrom = "2010-01-01 01:00:00"
-# dateTo = "2011-01-01 01:00:00"
-# sns.lineplot(data=df.loc[dateFrom:dateTo], x="date", y="meant")
 
 df['datetime'] = pd.to_datetime(df['date'], format='%d-%b-%Y %H:%M')
-df['yr'] = pd.DatetimeIndex(df['date']).year
+df['datetime2'] = df['datetime']
+df = df.set_index('datetime2')
+#df['yr'] = pd.DatetimeIndex(df['datetime']).year
 
-# instead of truncate, could also use plot = sns.lineplot(data=df.iloc[1:12], x="date", y="temp")
-new = df.truncate(after=25000, axis=0, copy=True) 
-print(new.head(3))
+mean_daily_temp = df["temp"].resample("d").mean()
+#print(mean_daily_temp.head(1))
+mean_monthly_temp = df["temp"].resample("m").mean()
+#print(mean_monthly_temp.head(1))
 
-'''
-fig = plt.figure(figsize=(10, 5)) 
-# creating the bar plot 
-plt.bar(names, age, color='blue', width=0.4) 
-plt.xlabel("Names")
-g.set_xticklabels( 
-    labels=["Asia", "Africa", "Antartica", "Europe"], rotation=30)  
-plt.ylabel("Age of the person") 
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(16,8), sharex='col')
+ax1 = axes[0]
+ax2 = axes[1]
+ax1.plot(df["datetime"], df["temp"])
+ax1.plot(mean_daily_temp)
+ax1.plot(mean_monthly_temp)
+ax1.set_title('Full Dataset', fontsize=14)
+
+dateFrom = "2024-01-01 01:00:00"
+dateTo = "2024-12-31 23:00:00"
+df_latest = df.loc[dateFrom:dateTo]
+mean_daily_temp_latest = df_latest["temp"].resample("d").mean()
+print(mean_daily_temp_latest.head(1))
+print(mean_daily_temp_latest.tail(1))
+mean_monthly_temp_latest = df_latest["temp"].resample("m").mean()
+
+ax2.plot(df_latest["datetime"], df_latest["temp"])
+ax2.plot(mean_daily_temp_latest)
+ax2.plot(mean_monthly_temp_latest)
+ax2.set_title('Latest Year', fontsize=14)
+
+xlabels = ["Hourly Temp","Daily Avg","Monthly Avg"]
+plt.xticks(rotation=90)
+plt.tight_layout(rect=(0, 0.1, 1, 1))
+ax1.legend(bbox_to_anchor=(0, 1), loc='upper left', labels=xlabels)
+ax2.legend(bbox_to_anchor=(0, 1), loc='upper left', labels=xlabels)
+
 plt.show()
-'''
-
-#plot = sns.lineplot(data=new, x="datetime", y="temp")
-plot = sns.lineplot(data=new["temp"])
-plt.figure(figsize=(8, 6))
-
-#sns.set_context("notebook", rc={"figure.figsize": (15, 10)})
-#plt.rcParams['figure.figsize']=2,1
-plot.set_xticklabels(labels=new["datetime"],rotation=90)
-#plot.set_xticks(ticks=new["yr"])
-#plot.set_xticklabels(labels=new["yr"], rotation=90)
-#plot.set_xticks([0, 1, 2, 3])
-#plot.set_xticklabels(["1996", "1997", "1998", "1999"])
-#plot.xaxis.set_major_locator(ticker.LinearLocator(7600))
-plt.show()
-
-'''
-        # Draw a pie chart of the results
-        risk_result = [attack_losses,defence_losses]
-        # Add totals to the legend, pie chart shows percentages
-        risk_labels = ["Attack Loss: " + str(attack_losses),"Defence Loss: " + str(defence_losses)]
-        explode=[0.05, 0.05]
-        plt.pie(risk_result, labels = None, autopct='%1.1f%%', explode=explode)
-        risk_title = "Risk results for " + str(rounds) + " rounds"
-        plt.title(risk_title)
-        plt.legend(bbox_to_anchor=(1.0, 0.6), loc='upper left', labels=risk_labels)
-        plt.subplots_adjust(right=0.6)
-        plt.show()
-    return
-
-    # Adjust the x-scale
-    plt.xlim([0, max(result[0:count,0])])
-    max1 = max(result[0:count,1])
-    max2 = max(result[0:count,2])
-
-    # adjust the y-scale
-    maxx = max1
-    if max2 > maxx:
-        maxx = max2
-    maxx = maxx*1.1
-    plt.ylim([0, maxx])
-
-    title_str = "Result: Attack loses"
-
-    risk_title = "Risk Results for " + str(count) + " rounds"
-    risk_labels = ["Attack","Defence"]
-    plt.suptitle(risk_title, fontsize=14)
-    plt.title(title_str, loc='left')
-    plt.legend(bbox_to_anchor=(1.02, 1.15), loc='upper right', labels=risk_labels)
-    plt.show()
-'''
