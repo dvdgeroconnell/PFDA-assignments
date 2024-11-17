@@ -34,8 +34,13 @@ print(df.head(3))
 # dateTo = "2011-01-01 01:00:00"
 # sns.lineplot(data=df.loc[dateFrom:dateTo], x="date", y="meant")
 
-df['datetime'] = pd.to_datetime(df['date'], format='%d-%b-%Y %H:%M')
-df['yr'] = pd.DatetimeIndex(df['date']).year
+df['date_time'] = pd.to_datetime(df['date'], format='%d-%b-%Y %H:%M')
+df['yr'] = pd.DatetimeIndex(df['date_time']).year
+# Set the index to date
+df.head(3)
+#date2 = 
+df = df.set_index('yr')
+df.head(3)
 
 # instead of truncate, could also use plot = sns.lineplot(data=df.iloc[1:12], x="date", y="temp")
 new = df.truncate(after=25000, axis=0, copy=True) 
@@ -58,7 +63,7 @@ plt.figure(figsize=(8, 6))
 
 #sns.set_context("notebook", rc={"figure.figsize": (15, 10)})
 #plt.rcParams['figure.figsize']=2,1
-plot.set_xticklabels(labels=new["datetime"],rotation=90)
+plot.set_xticklabels(labels=new["date_time"],rotation=90)
 #plot.set_xticks(ticks=new["yr"])
 #plot.set_xticklabels(labels=new["yr"], rotation=90)
 #plot.set_xticks([0, 1, 2, 3])
