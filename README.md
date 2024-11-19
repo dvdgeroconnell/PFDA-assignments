@@ -28,6 +28,18 @@ Create a Python program (or notebook) called assignment_5_risk (.py or .ipynb). 
 The program is run by executing the command "python assignment_5_risk.py" from the command line.  
 
 ## Assignment 6
-First version of assignment 6...
-  
+A program to retrieve weather data from https://cli.fusio.net/cli/climate_data/webdata/hly4935.csv and to plot:  
+  a) For 60%  
+     - The temperature  
+     - The mean temperature each day  
+     - The mean temperature for each month  
+  b) For an additional 40%  
+     - The Windspeed (data missing from this column)  
+     - The rolling windspeed over 24 hours  
+     - The max windspeed for each day  
+     - The monthly mean of the daily max windspeeds  
+   
+The program is run by executing the command "python .\assignment_6_Weather.py" from the command line.  
+One figure with 4 individual plots is drawn.  
+
 #### End
