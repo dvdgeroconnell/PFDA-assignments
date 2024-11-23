@@ -1,12 +1,20 @@
+
 # Repository - PFDA-assignments
-This is the GitHub repository for the assignments associated with the Programming for Data Analytics module.  
- 
-| Author  | Student ID  | Term  | Created  |  
-|----------|---------|---------|---------|  
-| David O'Connell  | G00438912  | 2H 2024  |  27/09/24  |  
 
-# Contents  
-
+## Purpose of this Repository  
+This is the GitHub repository for the assignments associated with the Programming for Data Analytics module.   
+Link to repository - [PFDA Assignments](https://github.com/dvdgeroconnell/PFDA-assignments.git).  
+   
+| Topic | Details |
+|---------|-------------|
+| **Module:**  | 4369 - Programming for Data Analytics  |
+| **Lecturer:**  | Andrew Beatty  | 
+| **Course:**  | Higher Diploma in Science in Computing (Data Analytics)  |
+| **Year/Semester:**  | Year 1 / Semester 2  |
+| **Student Name:**  | David O'Connell  |
+| **Student ID:**  | G00438912  |
+| **Student Email:**  | G00438912@atu.ie  |  
+   
 ## Assignment 1  
 Upload the URL to the PFDA assignment repository.  
 https://github.com/dvdgeroconnell/PFDA-assignments.git
@@ -42,4 +50,4 @@ A program to retrieve weather data from https://cli.fusio.net/cli/climate_data/w
 The program is run by executing the command "python .\assignment_6_Weather.py" from the command line.  
 One figure with 4 individual plots is drawn.  
 
-#### End
+### End
