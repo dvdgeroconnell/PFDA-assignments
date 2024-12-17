@@ -1,9 +1,7 @@
 
 # Repository - PFDA-assignments
 
-## Purpose of this Repository  
-This is the GitHub repository for the assignments associated with the Programming for Data Analytics module.   
-Link to repository - [PFDA Assignments](https://github.com/dvdgeroconnell/PFDA-assignments.git).  
+  
    
 | Topic | Details |
 |---------|-------------|
@@ -14,28 +12,45 @@ Link to repository - [PFDA Assignments](https://github.com/dvdgeroconnell/PFDA-a
 | **Student Name:**  | David O'Connell  |
 | **Student ID:**  | G00438912  |
 | **Student Email:**  | G00438912@atu.ie  |  
+
+## Purpose of this Repository  
+This is the GitHub repository for the assignments associated with the Programming for Data Analytics module.   
+Link to repository - [PFDA Assignments](https://github.com/dvdgeroconnell/PFDA-assignments.git).
    
-## Assignment 1  
-Upload the URL to the PFDA assignment repository.  
-https://github.com/dvdgeroconnell/PFDA-assignments.git
+   ## About this README  
+This README contains an overview of the purpose, contents and instructions for use of the *PFDA-assignments* repository.  
+  
+It has been based on the guidelines in [GitHub's documentation on READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes).  
+  
+More information on writing in Markdown can be found in [Github's documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). 
 
-## Assignment 2  
-Create a jupyter notebook called *assignment2-weather.ipynb* with a plot of the "dryBulbTemperature_Celsius" field over time.  
+## Assignments and Associated Content in this Repository
 
-## Assignment 3  
-Create a notebook called *assignment03-pie.ipynb* with a pie chart of people's email domains in the csv file at the url https://drive.google.com/uc?id=1AWPf-pJodJKeHsARQK_RHiNsE8fjPCVK&export=download. This csv file has 1000 people. The data was downloaded to the file people-1000.csv.  
+### Assignment 1  
+**Assignment:** Upload the URL to the PFDA assignment repository.  
+The URL is - https://github.com/dvdgeroconnell/PFDA-assignments.git  
 
-## Assignment 4  
+### Assignment 2  
+**Assignment:** Create a jupyter notebook called *assignment2-weather.ipynb* with a plot of the "dryBulbTemperature_Celsius" field over time.  
+The *assignment2-weather.ipynb* response is contained in this repository.  
+
+### Assignment 3  
+**Assignment:** Create a notebook called *assignment03-pie.ipynb* with a pie chart of people's email domains in the csv file at the url https://drive.google.com/uc?id=1AWPf-pJodJKeHsARQK_RHiNsE8fjPCVK&export=download. 
+
+This csv file has 1000 people.   
+The *assignment03-pie.ipynb* response is contained in this repository. The data is downloaded to the file *people-1000.csv.* 
+
+### Assignment 4  
 There was no assignment 4.  
 
-## Assignment 5  
+### Assignment 5  
 Create a Python program (or notebook) called *assignment_5_risk* (*.py* or *.ipynb*). Calculate the outcome of either:
 - A user-provided number of individual battle rounds in the game Risk; and plot the total attackers and total defenders lost in a pie chart.  
 - Calculate a random number of attackers and defenders, and run until one or the other is depleted to zero. The attack and defence losses after each round are plotted in a line graph.  
   
 The program is run by executing the command `python assignment_5_risk.py` from the command line.  
 
-## Assignment 6
+### Assignment 6
 Create a Python program (or notebook) called *assignment_6_Weather* (*.py* or *.ipynb*) to retrieve weather data from https://cli.fusio.net/cli/climate_data/webdata/hly4935.csv and to plot:  
   a) For 60%  
      - The temperature  
@@ -49,6 +64,12 @@ Create a Python program (or notebook) called *assignment_6_Weather* (*.py* or *.
    
 The program is run by executing the command `python .\assignment_6_Weather.py` from the command line.  
 One figure with 4 individual plots is drawn.  
+
+### Other Files  
+  
+#### people-1000.csv  
+This file contains a list of 1000 fictitious people and their details. It exists as a local input file for the *assignment03-pie.ipynb* notebook.
+
 
 # References
 For support with coding questions, the following sites were the most widely used:  
