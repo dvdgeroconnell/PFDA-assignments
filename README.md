@@ -17,7 +17,7 @@
 This is the GitHub repository for the assignments associated with the Programming for Data Analytics module.   
 Link to repository - [PFDA Assignments](https://github.com/dvdgeroconnell/PFDA-assignments.git).
    
-   ## About this README  
+## About this README  
 This README contains an overview of the purpose, contents and instructions for use of the *PFDA-assignments* repository.  
   
 It has been based on the guidelines in [GitHub's documentation on READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes).  
